@@ -1,24 +1,15 @@
 // import { Calender } from "../components/calender/calender";
-import CustomCheckbox from "../components/checkbox";
+import {MultipleSelectCheckmarks} from "../components/multiselect" 
 // import DataGridDemo from "../components/grid/grid";
 export default function Home(){
+    const names=[
+        "yes",
+        "no"
+    ]
     return(
         <div>
-            {/* <Calender maxwidth="maxx-width"  dateCount={10}/> */}
-            {/* <DataGridDemo/> */}
-            <CustomCheckbox 
-                defaultChecked={true}
-                disabled={false}
-                lable="Test"
-                required={true}
-                color="success"
-                colorbeforeChecked="red"
-                colorafterChecked="yellow"
-                indeterminate={true}
-                method={()=>console.log('Clicked')}
-                // icon={<BookmarkBorderIcon />}
-                // checkedIcon={<BookmarkIcon />}
-            />
+    <MultipleSelectCheckmarks data={names} isChipStyle={false} label="Tags"/>
+
         </div>
     )
 }
