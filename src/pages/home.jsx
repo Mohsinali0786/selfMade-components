@@ -1,10 +1,11 @@
-import TestSelect from "../components/select"
+// import { Calender } from "../components/calender/calender";
+import {MultipleSelectCheckmarks} from "../components/multiselect" 
+// import DataGridDemo from "../components/grid/grid";
 export default function Home(){
+
     return(
         <div>
-            {/* <Calender maxwidth="maxx-width"  dateCount={10}/> */}
-            {/* <DataGridDemo/> */}
-            <TestSelect/>
+            <MultipleSelectCheckmarks data={names} isChipStyle={false} label="Tags"/>
         </div>
     )
 }
