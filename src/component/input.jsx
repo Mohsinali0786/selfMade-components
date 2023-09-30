@@ -26,24 +26,11 @@ export  function BasicTextFields({
         icon,
     }) {
   return (
-<<<<<<< Updated upstream
-    <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <TextField
-        id={id} 
-=======
     // <Box
     //   component="div"
     //    >
       <TextField
         id='outlined-required' 
->>>>>>> Stashed changes
         label={label} 
         required={required}
         className={classes}
@@ -70,11 +57,7 @@ export  function BasicTextFields({
           }}
     /> 
         
-<<<<<<< Updated upstream
-    </Box>
-=======
     // </Box>
->>>>>>> Stashed changes
   );
 }
 export function TestInput(){
