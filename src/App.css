@@ -38,7 +38,7 @@
 }
 
 .red{
-  color: red;
+  color: red !important;
 }
 .yellow{
   color: yellow;
