@@ -4,7 +4,7 @@ export default function CustomCheckbox({
     defaultChecked,
     disabled ,
     required, 
-    lable,
+    label,
     color , 
     colorbeforeChecked ,
     colorafterChecked,
@@ -26,8 +26,8 @@ export default function CustomCheckbox({
                   },
                 }}
                 icon={icon}
-                name={lable.toLowerCase()}
-                value={lable.toLowerCase()}
+                name={label.toLowerCase()}
+                value={label.toLowerCase()}
                 checkedIcon={checkedIcon}
                 indeterminate={indeterminate}
                 onChange={method}
@@ -36,7 +36,7 @@ export default function CustomCheckbox({
             }
         disabled={disabled}
         required={required}
-        label={lable}
+        label={label}
     />
   </div>
   ) 
