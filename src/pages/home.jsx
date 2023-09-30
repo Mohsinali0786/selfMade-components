@@ -1,11 +1,13 @@
-// import { Calender } from "../components/calender/calender";
-import {MultipleSelectCheckmarks} from "../components/multiselect" 
-// import DataGridDemo from "../components/grid/grid";
+
+import { TestInput } from "../component/input"
+import { PasswordIcon } from "../component/passwordIcon"
 export default function Home(){
 
     return(
         <div>
-            <MultipleSelectCheckmarks data={names} isChipStyle={false} label="Tags"/>
+            I am Home
+            <TestInput/>
+            <PasswordIcon/>
         </div>
     )
 }
