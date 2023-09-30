@@ -26,6 +26,7 @@ export  function BasicTextFields({
         icon,
     }) {
   return (
+<<<<<<< Updated upstream
     <Box
       component="form"
       sx={{
@@ -36,6 +37,13 @@ export  function BasicTextFields({
     >
       <TextField
         id={id} 
+=======
+    // <Box
+    //   component="div"
+    //    >
+      <TextField
+        id='outlined-required' 
+>>>>>>> Stashed changes
         label={label} 
         required={required}
         className={classes}
@@ -62,7 +70,11 @@ export  function BasicTextFields({
           }}
     /> 
         
+<<<<<<< Updated upstream
     </Box>
+=======
+    // </Box>
+>>>>>>> Stashed changes
   );
 }
 export function TestInput(){
