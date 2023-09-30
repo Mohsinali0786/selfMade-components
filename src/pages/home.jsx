@@ -1,14 +1,10 @@
-import { TestInput } from "../component/input"
-import { PasswordIcon } from "../component/passwordIcon"
-import {TestButton} from '../components/buttons'
+import { TestCombo } from "../components/autocomplete"
 export default function Home(){
 
     return(
         <div>
             I am Home
-            <TestInput/>
-            <PasswordIcon/>
-            <TestButton/>
+            <TestCombo/>
         </div>
     )
 }
