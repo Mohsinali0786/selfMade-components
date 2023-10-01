@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function Customselect({ data,label,value, autowidth , required ,fullWidth,handleChange,age,size }) {
+export function Customselect({ data,label,value, autowidth , required ,fullWidth,handleChange,age,size }) {
   return (
     <>
       <FormControl fullWidth={fullWidth} size={size}>

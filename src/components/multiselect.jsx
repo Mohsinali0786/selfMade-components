@@ -64,19 +64,19 @@ export function MultipleSelectCheckmarks({data,isChipStyle,label}) {
           renderValue={isChipStyle ? (selected)=> chiprenderMethod(selected) : (selected) => selected.join(', ')}
           MenuProps={MenuProps}
         >
-          {data.map((name) => (
+          {data.map((x) => (
             isChipStyle ? 
             <MenuItem
-            key={name}
-            value={name}
-            style={getStyles(name, personName, theme)}
+            key={x?.id}
+            value={x?.name}
+            style={getStyles(x.name, personName, theme)}
           >
-            {name}
+            {x?.name}
           </MenuItem>
           :
-          <MenuItem key={name} value={name}>
-            <Checkbox checked={personName.indexOf(name) > -1} />
-            <ListItemText primary={name} />
+          <MenuItem key={x.id} value={x.name}>
+            <Checkbox checked={personName.indexOf(x) > -1} />
+            <ListItemText primary={x.name} />
           </MenuItem>
           ))}
         </Select>

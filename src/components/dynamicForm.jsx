@@ -6,7 +6,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CustomCheckbox from "./checkbox";
 import {CustomRadioButtons} from "./radioButtons";
-
+import { ComboBox } from "./autocomplete";
+import {Customselect} from './select'
+import { MultipleSelectCheckmarks } from "./multiselect";
 
 export function DynamicForm({type , formElements}){
     return(
@@ -91,6 +93,51 @@ export function DynamicForm({type , formElements}){
                                         />
                                     </Col>
                                     :
+                                    x.elementType == 'autocomplete' ?
+                                    <Col md={x.columns} className="my-3 mtext-left">
+                                        <ComboBox 
+                                            autoHighlight={x.autoHighlight}
+                                            autoSelect={x.autoSelect}
+                                            className={x.className}
+                                            clearOnEscape={x.clearOnEscape}
+                                            disableClearable={x.disableClearable}
+                                            disabled={x.disabled}
+                                            fullWidth={x.fullWidth}
+                                            multiple={x.multiple}
+                                            onChange={x.onChange}
+                                            label={x.label}
+                                            datasource={x.datasource}
+                                        />
+                                    </Col>
+                                    :
+                                    x.elementType == 'select' ?
+                                    <Col md={x.columns} className="my-3 mtext-left">
+                                          <Customselect 
+                                            required={x.required} 
+                                            label={x.label} 
+                                            value={x.value} 
+                                            size={x.size} 
+                                            fullWidth={x.fullWidth} 
+                                            data={x.datasource}
+                                            autoWidth={x.autoWidth}
+                                        />
+                                    </Col>
+                                    :
+                                    x.elementType == 'multiSelect' ?
+                                    <Col md={x.columns} className="my-3 mtext-left">
+                                          <MultipleSelectCheckmarks 
+                                            required={x.required} 
+                                            label={x.label} 
+                                            value={x.value} 
+                                            size={x.size} 
+                                            fullWidth={x.fullWidth} 
+                                            data={x.datasource}
+                                            autoWidth={x.autoWidth}
+                                        />
+                                    </Col>
+                                    
+                                    
+                                    :
                                     null
                                 )
                             })
@@ -160,16 +207,39 @@ export function TestDynamicForm(){
 
         },
         {
-            column:3,
+            columns:3,
             elementType:'checkbox',
             label:'Test'
         },
         {
-            column:3,
+            columns:3,
             elementType:'radiobutton',
             label:'Test',
             datasource:[{id:1,name:'male'},{id:2,name:'female'},]
-        }
+        },
+        {
+            columns:3,
+            elementType:'autocomplete',
+            label:'Test',
+            datasource:[  { name: 'The Shawshank Redemption', id: 1994 },
+            { name: 'The Godfather', id: 1972 },],
+        },
+        {
+            columns:3,
+            elementType:'select',
+            label:'Test',
+            datasource:[  { name: 'The Shawshank Redemption', id: 1994 },
+            { name: 'The Godfather', id: 1972 },],
+            fullWidth:true
+        },
+        {
+            columns:3,
+            elementType:'multiSelect',
+            label:'Test',
+            datasource:[  { name: 'The Shawshank Redemption', id: 1994 },
+            { name: 'The Godfather', id: 1972 },],
+            isChipStyle:false 
+        },
     ]
     return(
         <>
