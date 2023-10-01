@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CustomCheckbox from "./checkbox";
+import {CustomRadioButtons} from "./radioButtons";
+
 
 export function DynamicForm({type , formElements}){
     return(
@@ -56,7 +58,7 @@ export function DynamicForm({type , formElements}){
                                     </Col>
                                     :
                                     x.elementType == 'checkbox' ? 
-                                    <Col msd={x.columns} className="my-3">
+                                    <Col md={x.columns} className="my-3">
                                     
                                         <CustomCheckbox 
                                             defaultChecked={x?.defaultChecked}  //true||false
@@ -76,8 +78,19 @@ export function DynamicForm({type , formElements}){
                                             required={x?.required}
                                             label={x?.label}
                                         />
-                                </Col>
-                                :
+                                    
+                                    </Col>
+                                    :
+                                    x.elementType == 'radiobutton' ?
+                                    <Col md={x.columns} className="my-3 mtext-left">
+                                        <CustomRadioButtons 
+                                            label={x.label} 
+                                            data={x.datasource} 
+                                            defaultValue={x.defaultValue} 
+                                            handleChange={x.onChange}
+                                        />
+                                    </Col>
+                                    :
                                     null
                                 )
                             })
@@ -150,6 +163,12 @@ export function TestDynamicForm(){
             column:3,
             elementType:'checkbox',
             label:'Test'
+        },
+        {
+            column:3,
+            elementType:'radiobutton',
+            label:'Test',
+            datasource:[{id:1,name:'male'},{id:2,name:'female'},]
         }
     ]
     return(
