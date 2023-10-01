@@ -26,8 +26,8 @@ export default function CustomCheckbox({
                   },
                 }}
                 icon={icon}
-                name={lable.toLowerCase()}
-                value={lable.toLowerCase()}
+                name={lable?.toLowerCase()}
+                value={lable?.toLowerCase()}
                 checkedIcon={checkedIcon}
                 indeterminate={indeterminate}
                 onChange={method}

@@ -43,3 +43,6 @@
 .yellow{
   color: yellow;
 }
+.mtext-left{
+  text-align: left !important;
+}
