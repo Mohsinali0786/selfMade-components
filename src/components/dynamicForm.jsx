@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CustomCheckbox from "./checkbox";
 import {CustomRadioButtons} from "./radioButtons";
+import { ComboBox } from "./autocomplete";
 
 
 export function DynamicForm({type , formElements}){
@@ -91,6 +92,24 @@ export function DynamicForm({type , formElements}){
                                         />
                                     </Col>
                                     :
+                                    x.elementType == 'autocomplete' ?
+                                    <Col md={x.columns} className="my-3 mtext-left">
+                                        <ComboBox 
+                                            autoHighlight={x.autoHighlight}
+                                            autoSelect={x.autoSelect}
+                                            className={x.className}
+                                            clearOnEscape={x.clearOnEscape}
+                                            disableClearable={x.disableClearable}
+                                            disabled={x.disabled}
+                                            fullWidth={x.fullWidth}
+                                            multiple={x.multiple}
+                                            onChange={x.onChange}
+                                            label={x.label}
+                                            datasource={x.datasource}
+                                        />
+                                    </Col>
+                                    
+                                    :
                                     null
                                 )
                             })
@@ -160,16 +179,24 @@ export function TestDynamicForm(){
 
         },
         {
-            column:3,
+            columns:3,
             elementType:'checkbox',
             label:'Test'
         },
         {
-            column:3,
+            columns:3,
             elementType:'radiobutton',
             label:'Test',
             datasource:[{id:1,name:'male'},{id:2,name:'female'},]
-        }
+        },
+        {
+            columns:3,
+            elementType:'autocomplete',
+            label:'Test',
+            datasource:[  { name: 'The Shawshank Redemption', id: 1994 },
+            { name: 'The Godfather', id: 1972 },],
+            
+        },
     ]
     return(
         <>
